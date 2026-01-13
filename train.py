@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, precision_recall_fscore_support, cla
 
 def main():
     # 1. 数据集准备
-    root_dir = r"D:\BaiduNetdiskDownload\fire\data\yolo"
+    root_dir = yours
 
     train_dataset = FlameDatasetFrom3Dirs(
         root_dir=root_dir,
@@ -95,26 +95,22 @@ def main():
                 val_correct += (preds == labels).sum().item()
                 val_total += labels.size(0)
 
-                # ⭐ 把当前 batch 的标签和预测收集到 list 里
                 all_labels.extend(labels.cpu().numpy().tolist())
                 all_preds.extend(preds.cpu().numpy().tolist())
 
         val_loss /= val_total
         val_acc = val_correct / val_total
 
-        # 如果验证集为空（一般不会），直接跳过避免 warning
         if len(all_labels) == 0:
             print(f"[Epoch {epoch + 1}/{num_epochs}] val set empty, skip metrics")
         else:
-            # accuracy：和 val_acc 应该一致，这里可以对一下
+
             acc = accuracy_score(all_labels, all_preds)
 
-            # macro：对每个类别算 P/R/F1，再取平均（各类权重相同）
             precision_macro, recall_macro, f1_macro, _ = precision_recall_fscore_support(
                 all_labels, all_preds, average="macro", zero_division=0
             )
 
-            # weighted：按照每一类在验证集中的样本数量加权平均
             precision_weighted, recall_weighted, f1_weighted, _ = precision_recall_fscore_support(
                 all_labels, all_preds, average="weighted", zero_division=0
             )
@@ -126,7 +122,6 @@ def main():
                 f"prec_macro={precision_macro:.4f} rec_macro={recall_macro:.4f} f1_macro={f1_macro:.4f}"
             )
 
-            # 每类分别的指标（0: fire, 1: default, 2: smoke）
             prec_cls, rec_cls, f1_cls, support = precision_recall_fscore_support(
                 all_labels, all_preds, labels=[0, 1, 2], average=None, zero_division=0
             )
