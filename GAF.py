@@ -54,3 +54,4 @@ def gaf_to_tensor(series, method="summation", image_size=None):
         ).squeeze(0)                                      # (1, image_size, image_size)
 
     return gaf_tensor
+
