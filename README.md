@@ -1,2 +1,2 @@
 # GAF
-Enhanced Flame and Smoke Detection via Gated Multimodal Fusion with Gramian Angular Fields
+This code corresponds directly to the manuscript the author has submitted to The Visual Computer at present
