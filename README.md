@@ -16,11 +16,14 @@ This repository provides the official implementation of **FlameGAF-GateNet**, a 
 
 ---
 
-## Repository Structure
-> (Update these names if your folders differ.)
-
+## abstract
+> Timely and reliable detection of flame and smoke is crucial for early fire warning. This study introduces a gated multimodal network, FlameGAF-GateNet, which leverages Gramian Angular Fields (GAFs) to encode temporal dynamics alongside RGB image data for enhanced flame and smoke detection. By employing a dual-branch architecture with a gated fusion mechanism, our approach achieves 98.38% accuracy and 98.04% macro-F1 on a diverse dataset, outperforming single-modality baselines by significant margins. These findings underscore the potential of multimodal fusion in advancing robust fire detection systems. 
 
 ---
+## Methods
+<img width="842" height="337" alt="image" src="https://github.com/user-attachments/assets/808a7bb9-ea69-4c31-8d03-b8b76299efd5" />
+RGB frames and time-series segments are processed by image and GAF branches, respectively.A gated fusion module adaptively combines image and GAF features for fire, default, and smoke classification
+
 
 ## Requirements
 
