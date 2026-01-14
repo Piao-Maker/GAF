@@ -4,7 +4,6 @@ import torch.nn.functional as F
 
 
 def min_max_scale(series):
-    """把一维时间序列缩放到 [-1, 1]"""
     x = np.asarray(series, dtype=np.float32)
     x_min, x_max = x.min(), x.max()
     if x_max == x_min:
@@ -16,10 +15,7 @@ def min_max_scale(series):
 
 
 def gaf_transform_numpy(series, method="summation"):
-    """
-    利用 Gramian 角场将一维时间序列转换为二维矩阵 (n x n).
-    method: "summation" -> GASF, "difference" -> GADF
-    """
+
     x_scaled = min_max_scale(series)            # [-1, 1]
     phi = np.arccos(x_scaled)                  # 角度 [0, π], shape (n,)
 
@@ -36,9 +32,7 @@ def gaf_transform_numpy(series, method="summation"):
 
 
 def gaf_to_tensor(series, method="summation", image_size=None):
-    """
-    返回 shape = (1, H, W) 的 torch.Tensor，单通道 GAF 图像
-    """
+
     if isinstance(series, torch.Tensor):
         series = series.detach().cpu().numpy()
 
@@ -54,3 +48,4 @@ def gaf_to_tensor(series, method="summation", image_size=None):
         ).squeeze(0)                                      # (1, image_size, image_size)
 
     return gaf_tensor
+
