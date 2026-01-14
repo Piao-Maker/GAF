@@ -3,13 +3,11 @@ import numpy as np
 import os
 
 def get_flame_area_from_label(label_path, img_shape):
-    """根据YOLO格式标签计算火焰区域面积"""
     h, w = img_shape[:2]
     flame_area = 0.0
     if os.path.exists(label_path):
         with open(label_path, 'r') as f:
             for line in f:
-                # YOLO标签格式：class x_center y_center w_ratio h_ratio
                 parts = line.strip().split()
                 if len(parts) != 5:
                     continue
@@ -21,9 +19,9 @@ def get_flame_area_from_label(label_path, img_shape):
     return flame_area
 
 # 数据集路径配置
-img_dir = r"D:\BaiduNetdiskDownload\fire\data\yolo\yolo\val\images"
-label_dir = r"D:\BaiduNetdiskDownload\fire\data\yolo\yolo\val\labels"
-ts_save_dir = r"D:\BaiduNetdiskDownload\fire\data\yolo\yolo\val\time_series"
+img_dir = yours
+label_dir =yours
+ts_save_dir = yours
 os.makedirs(ts_save_dir, exist_ok=True)
 
 # 读取连续帧（按文件名排序，确保时序正确）
@@ -97,5 +95,6 @@ for idx, img_name in enumerate(img_names):
     else:
         print(f"跳过 {img_name}：无有效火焰面积数据")
         skipped_count += 1
+
 
 print(f"\n时序数据生成完成！成功生成 {generated_count} 个文件，跳过 {skipped_count} 个文件")
