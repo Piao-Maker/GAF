@@ -31,7 +31,7 @@ If you find this repository useful, please consider citing our manuscript (see [
 - PyTorch: **[your version]** (CUDA **[your CUDA version]** if using GPU)
 
 ### Install
-```bash
+
 git clone https://github.com/Yanglianpu/GAF.git
 cd GAF
 
@@ -57,11 +57,11 @@ data/
     smoke/
     normal/
 
-License
+### License
 This project is released under the MIT License. See LICENSE
  for details.
 
-Contact
+### Contact
 @article{FlameGAFGateNet2026,
   title   = {Enhanced Flame and Smoke Detection via Gated Multimodal Fusion with Gramian Angular Fields},
   author  = {Yang, Lianpu},
