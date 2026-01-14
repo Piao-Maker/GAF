@@ -1,5 +1,22 @@
-This code corresponds directly to the manuscript the author has submitted to The Visual Computer at present
-First, extract the continuous video frames into data set pictures, or use the open source continuous video frame data set, and then obtain the timing file through Get-shixu
-According to the first level: images, label, series; the second level: train, val. Save data
-Change the data set path in the program to the saved path to perform experiments.
+# FlameGAF-GateNet (GAF + Gated Multimodal Fusion for Flame/Smoke Detection)
+
+This repository provides the official implementation of **FlameGAF-GateNet**, a gated multimodal framework for flame and smoke detection that combines **RGB appearance** with **temporal dynamics encoded by Gramian Angular Fields (GAFs)**.
+
+✅ **This codebase is directly associated with the manuscript currently submitted to _The Visual Computer_:**  
+**“Enhanced Flame and Smoke Detection via Gated Multimodal Fusion with Gramian Angular Fields.”**
+
+If you find this repository useful, please consider citing our manuscript (see [Citation](#citation)).
+
+---
+
+## Highlights
+- **Dual-branch architecture**: RGB branch + GAF branch.
+- **GAF temporal encoding**: converts lightweight temporal descriptors into image-like GAF representations.
+- **Sample-adaptive gated fusion**: learns per-sample fusion weights for robust multimodal integration.
+- Reproducible training/evaluation scripts.
+
+---
+
+## Repository Structure
+> (Update these names if your folders differ.)
 
