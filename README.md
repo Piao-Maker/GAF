@@ -20,3 +20,25 @@ If you find this repository useful, please consider citing our manuscript (see [
 ## Repository Structure
 > (Update these names if your folders differ.)
 
+
+---
+
+## Requirements
+
+### Environment
+- OS: Linux/Windows/macOS
+- Python: **3.8+** (recommended: 3.9/3.10)
+- PyTorch: **[your version]** (CUDA **[your CUDA version]** if using GPU)
+
+### Install
+```bash
+git clone https://github.com/Yanglianpu/GAF.git
+cd GAF
+
+# Option 1: pip
+pip install -r requirements.txt
+
+# Option 2: conda (example)
+# conda create -n flamegaf python=3.10 -y
+# conda activate flamegaf
+# pip install -r requirements.txt
