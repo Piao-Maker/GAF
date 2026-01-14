@@ -39,17 +39,23 @@ All experiments in this study were conducted on a workstation equipped with an I
 ```bash
 git clone https://github.com/Yanglianpu/GAF.git
 cd GAF
-
+```
 # Option 1: pip
+```bash
 pip install -r requirements.txt
+```
 
 # Option 2: conda (example)
+```bash
 # conda create -n flamegaf python=3.10 -y
+```
 # conda activate flamegaf
+```bash
 # pip install -r requirements.txt
-
+```
 
 requirements.txt:
+```bash
 certifi==2023.7.22
 charset-normalizer==3.3.0
 colorama==0.4.6
