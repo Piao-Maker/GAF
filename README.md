@@ -65,6 +65,7 @@ python train.py \
   --batch_size [BS] \
   --lr [LR] \
   --output_dir runs/rgb_baseline
+
 python train.py \
   --mode gaf \
   --data_root data \
@@ -72,6 +73,7 @@ python train.py \
   --batch_size [BS] \
   --lr [LR] \
   --output_dir runs/gaf_baseline
+
 python train.py \
   --mode fusion \
   --fusion_type gate \
@@ -82,11 +84,13 @@ python train.py \
   --batch_size [BS] \
   --lr [LR] \
   --output_dir runs/flamegaf_gatenet
+
 python eval.py \
   --mode fusion \
   --fusion_type gate \
   --data_root data \
   --ckpt_path runs/flamegaf_gatenet/best.pth
+
 python train.py --mode fusion --fusion_type gate --data_root data --output_dir runs/flamegaf_gatenet
 @article{FlameGAFGateNet2026,
   title   = {Enhanced Flame and Smoke Detection via Gated Multimodal Fusion with Gramian Angular Fields},
@@ -98,9 +102,5 @@ python train.py --mode fusion --fusion_type gate --data_root data --output_dir r
 
 ---
 
-### 我建议你再补一个小文件（编辑很喜欢）
-在仓库根目录加一个 `CITATION.cff` 或 `CITATION.md`，并在 README 的 “Citation” 里链接过去。这样“提醒读者引用稿件”的要求会更明显。
 
-如果你把仓库的实际结构（比如 `train.py`/`eval.py` 参数名、数据目录真实长什么样）贴我一下，我可以把上面 README 里的命令行参数**改成完全匹配你代码的版本**，做到“复制就能跑”。
-::contentReference[oaicite:0]{index=0}
 
