@@ -31,7 +31,7 @@ If you find this repository useful, please consider citing our manuscript (see [
 - PyTorch: **[your version]** (CUDA **[your CUDA version]** if using GPU)
 
 ### Install
-
+```bash
 git clone https://github.com/Yanglianpu/GAF.git
 cd GAF
 
@@ -42,7 +42,10 @@ pip install -r requirements.txt
 # conda create -n flamegaf python=3.10 -y
 # conda activate flamegaf
 # pip install -r requirements.txt
+```
 
+###Dataset
+```bash
 data/
   train/
     fire/
@@ -56,10 +59,12 @@ data/
     fire/
     smoke/
     normal/
+```
 
 ### License
 This project is released under the MIT License. See LICENSE
  for details.
+---
 
 ### Contact
 @article{FlameGAFGateNet2026,
