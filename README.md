@@ -2,7 +2,7 @@
 
 This repository provides the official implementation of **FlameGAF-GateNet**, a gated multimodal framework for flame and smoke detection that combines **RGB appearance** with **temporal dynamics encoded by Gramian Angular Fields (GAFs)**.
 
-✅ **This codebase is directly associated with the manuscript currently submitted to _The Visual Computer_:**  
+✅ **This codebase is directly associated with the manuscript currently submitted to Signal, Image and Video Processing:**  
 **“Enhanced Flame and Smoke Detection via Gated Multimodal Fusion with Gramian Angular Fields.”**
 
 
